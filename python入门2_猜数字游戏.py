@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 print ('------侯琪学python!-------')
 temp = input ('猜猜我心里想的数字:')
 guess = int (temp)
