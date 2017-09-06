@@ -7,7 +7,7 @@ d['Jack']=59
 print (d)
 print('判断key是否存在，可以通过in判断,如下:')
 print(r"'Ramon' in d :",'Ramon' in d)
-print ('二十通过dict提供的get方法，如果Key不存在返回None或自己指定的值')
+print ('二是通过dict提供的get方法，如果Key不存在返回None或自己指定的值')
 print(r"d.get('Leo'):",d.get('Leo'))
 print(r"d.get('Hello'):",d.get('Hello',-1))
 
@@ -23,7 +23,37 @@ print ('=====set======')
 #要创建一个set，需要提供一个list作为输入集合
 s=set([1,2,3])
 print (s)
-#传入的参数[1,2,3]是一个list，而限时的{1,2,3}说明set内部只有1,2,3三个元素
+#传入的参数[1,2,3]是一个list，而显示的{1,2,3}说明set内部只有1,2,3三个元素
 #重复元素在set中自动被过滤
 s=set([1,2,2,3,3,4,4,4])
 print (s)
+#通过add(key)可以将元素添加到set中
+s.add(5)
+print(s)
+#通过remove方法可以删除元素
+s.remove(5)
+print(s)
+#set可以看成数学意义上的无序，无重复的集合，所以这两个可以做交集，并集
+a=set([1,3,5,7])
+b=set([2,4,5,6])
+print(a&b)
+print(a|b)
+#str是不可变对象，list是可变对象，对可变对象进行操作，内部内容会发生变化
+c=[4,3,1,2]
+c.sort()
+print(c)
+c=['c','b','a']
+c.sort()
+print(c)
+#对不可变对象str进行操作
+s='abc'
+s.replace('a','A')
+print(s)
+s='abc'
+b=s.replace('a','A')
+print(b)
+print(s)
+#当我们调用a.replace('a', 'A')时，实际上调用方法replace是作用在字符串对象'abc'上的，
+#而这个方法虽然名字叫replace，但却没有改变字符串'abc'的内容。
+#相反，replace方法创建了一个新字符串'Abc'并返回，如果我们用变量b指向该新字符串，
+#就容易理解了，变量a仍指向原有的字符串'abc'，但变量b却指向新字符串'Abc'了：
