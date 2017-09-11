@@ -37,4 +37,35 @@ def fblq(max):
 		a,b=b,a+b
 		n=n+1
 	return 'ok'
-fblq(10)
+print(fblq(10))
+#generator和函数的执行流程不一样。函数时顺序执行，遇到return语句
+#或最后一行就返回。而generator，在执行next()的时候执行，遇到yield
+#返回，再次执行时从上次执行到的yield语句处继续执行。
+print('定义一个generator,依次返回1,3,5')
+def odd():
+	print('step 1')
+	yield(1)
+	print('step 2')
+	yield(2)
+	print('step 3')
+	yield(3)
+o=odd()
+print(o)
+print('next(o):',next(o))
+print('next(o):',next(o))
+print('next(o):',next(o))
+#print('next(o):',next(o))   #StopIteration
+#odd不是普通函数，是generator,遇到yield中断，下次从中断出执行
+for y in odd():
+	print(y)
+#fblq()定义为generator之后，通过for循环遍历
+for x in fblq(10):
+	print(x)
+fb=fblq(10)
+whlie True:
+	try:
+		x=next(fb)
+		print(x)
+	except Exception as e:
+		print('generator return value',e.value)
+		break
