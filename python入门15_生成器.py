@@ -62,10 +62,22 @@ for y in odd():
 for x in fblq(10):
 	print(x)
 fb=fblq(10)
-whlie True:
+while True:
 	try:
 		x=next(fb)
 		print(x)
 	except Exception as e:
 		print('generator return value',e.value)
 		break
+#杨辉三角
+def triangles(n):
+	for i in range(n):
+		if i==0:
+			t=[1]
+		elif i==1:
+			t=[1,1]
+		else:
+			t=[1]+[t[j-1]+t[j] for j in range(1,len(t))]+[1]
+		yield t
+for i in triangles(10):
+	print(i)
