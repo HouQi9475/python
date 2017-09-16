@@ -27,7 +27,7 @@ print(isinstance(iter([]),Iterator))
 print(isinstance(iter({}),Iterator))
 print(isinstance(iter('ABC'),Iterator))
 #Python的Iterator对象表示的是一个数据流，Iterator对象可以被next()
-#函数调用并不断返回下一个数据，知道没有数据抛出异常。可以把这个数
+#函数调用并不断返回下一个数据，直到没有数据抛出异常。可以把这个数
 #据流看作有序序列，但不知道其长度，只能不断next()。惰性的，只有在
 #需要返回下一个数据时才会计算
 print('小结:')
